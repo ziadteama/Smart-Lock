@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  node-backend:
+    build: ./node-backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - face-service
+    networks:
+      - smartlock
+
+  face-service:
+    build: ./python-face-service
+    ports:
+      - "5001:5001"
+    networks:
+      - smartlock
+
+networks:
+  smartlock:
+    driver: bridge
