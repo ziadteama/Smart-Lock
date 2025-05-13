@@ -1,0 +1,9 @@
+[submodule "Smart-Lock-Server"]
+	path = Smart-Lock-Server
+	url = https://github.com/ziadteama/Smart-Lock-Server.git
+[submodule "face-recognition-microservice"]
+	path = face-recognition-microservice
+	url = https://github.com/ziadteama/face-recognition-microservice.git
+[submodule "Smart-Lock-Client"]
+	path = Smart-Lock-Client
+	url = https://github.com/ziadteama/Smart-Lock-Client
