@@ -1,19 +1,24 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  node-backend:
-    build: ./Smart-Lock-Server
+  backend:
+    image: halahala1/smart-lock-backend:latest
     ports:
       - "3000:3000"
     depends_on:
       - face-service
+    restart: on-failure                   
+    env_file:
+      - ./Smart-Lock-Server/.env
     networks:
       - smartlock
 
   face-service:
-    build: ./face-recognition-microservice
+    image: halahala1/face-service:latest
     ports:
       - "5001:5001"
+    volumes:
+      - ./face-recognition-microservice/known_faces:/app/known_faces
     networks:
       - smartlock
 
